@@ -1,0 +1,19 @@
+{
+  "name": "Agilizei_chapter2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run:chrome": "npx cypress run --browser chrome --headless",
+    "cy:run:firefox": "npx cypress run --browser firefox --headless",
+    "cy:run:edge": "npx cypress run --browser edge --headless"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chance": "^1.1.8",
+    "cypress": "^9.5.0"
+  }
+}
