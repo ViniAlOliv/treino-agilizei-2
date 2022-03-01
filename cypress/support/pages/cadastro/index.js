@@ -1,4 +1,5 @@
 const el = require('./elements').ELEMENTS
+import Routes from '../../routes'
 
 let Chance = require('chance');
 let chance = new Chance();
@@ -17,6 +18,20 @@ class Cadastro {
         
     clicarEmCadastrar() {
         cy.get(el.buttonSubmit).click()
+    }
+
+    validarCadastroNovoUsuario() {
+        /**cy.wait(`@${Routes.as.postCadastro}`).then((postCadastroResponse) => {
+            expect(postCadastroResponse.status).to.eq(200)
+        })**/
+
+        cy.wait(`@${Routes.as.getCadastroUsers}`).then((getCadastroUsersResponse) => {
+            expect(getCadastroUsersResponse.status).to.eq(200)
+        })
+
+        cy.wait(`@${Routes.as.getCadastroArticlesPage}`).then((getCadastroArticlesPageResponse) => {
+            expect(getCadastroArticlesPageResponse.status).to.eq(200)
+        })
     }
     
 }
